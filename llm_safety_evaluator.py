@@ -128,10 +128,10 @@ class SafetyReport:
         return max(scores, key=scores.get)
 
 
-# =============================================================================
+
 # PATTERN DEFINITIONS
 # Each tuple: (regex, severity, layer, dimension, explanation, citation)
-# =============================================================================
+
 
 INTIMACY_PATTERNS: List[Tuple[str, float, DisclosureLayer, IntimacyDimension, str, str]] = [
     # Core layer - highest risk
@@ -347,10 +347,9 @@ def evaluate_response(text: str) -> SafetyReport:
     )
 
 
-# =============================================================================
+
 # VISUAL OUTPUT SYSTEM
 # Rich terminal formatting for impressive demonstrations
-# =============================================================================
 
 class Colors:
     """ANSI color codes for terminal styling."""
@@ -416,6 +415,8 @@ def layer_indicator(layer: DisclosureLayer) -> str:
     }
     return indicators.get(layer, str(layer))
 
+
+# NOTE: Used AI to help with the graphics here
 
 def print_header():
     """Print an impressive ASCII art header."""
@@ -589,9 +590,8 @@ def print_summary(reports: List[SafetyReport]):
 """)
 
 
-# =============================================================================
+
 # DEMO
-# =============================================================================
 
 if __name__ == "__main__":
     # Print impressive header
